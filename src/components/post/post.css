@@ -1,0 +1,100 @@
+:root{
+    --postPrimaryColor:white;
+    --postSecondaryColor:black;
+}
+*{
+    margin: 0;padding: 0;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+.post{
+    border-radius: 10px;
+    margin:15px auto;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width:500px;
+    width:500px;
+    padding: 0;
+    background: var(--postPrimaryColor);
+}
+.post .user_details .user{
+    display: flex;
+    width:100%;
+    align-items: center;
+    user-select: none;
+    justify-content: flex-start;
+    background: var(--postPrimaryColor);
+    border:none;
+    color:black;
+    border-radius: 10px;
+}
+.post .user_details .user .logo img{
+    width:40px;
+    margin: 10px;
+    height:40px;
+    border-radius: 50%;
+}
+.post .date{
+    margin-left: 10px;
+    font-size: 16px;
+    color:gray;
+}
+.post .other{
+    background: var(--postSecondaryColor);
+    padding:30px 15px 15px 15px;
+    width:100%;
+    margin: 0;
+    border-bottom-left-radius:10px ;
+    border-bottom-right-radius:10px ;
+    border-top-left-radius:30px ;
+    border-top-right-radius:30px ;
+}
+.post .other .actions{
+    display: flex;
+    width:100%;
+    margin:20px 0;
+}
+.liked{
+    color:red !important;
+}
+.d-none{
+    display:none;
+}
+.d-flex{
+    display: flex;
+}
+.other_send .send_model{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    flex-direction: column;
+}
+
+.input_search{
+    margin: 0 20px;
+    border:none;
+    outline:none;
+    padding:8px 3px;
+    text-align: center;
+    border-radius: 10px;
+}
+.other_normal .send_model{
+    display: none;
+}
+.search_results{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.btn_like{
+    margin:0 10px;
+    font-size: 20px;
+    transition:.2s;
+    cursor: pointer;
+}

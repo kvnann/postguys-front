@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Account from './pages/accounts/accounts';
+import Messages from './pages/messages/messages';
+import Notifications from './pages/notifications/notifications';
+import Feed from './pages/feed/feed';
+import Login from './pages/login/login';
+import Register from './pages/register/register';
+import CreatePost from './pages/createPost/createPost';
+import User from './pages/user/User';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./App.css"
+import {
+BrowserRouter as Router,
+useRoutes,
+} from "react-router-dom";
 
-function App() {
+const App = () => {
+  let routes = useRoutes([
+    { path: "/", element: <Feed /> },
+    { path: "/login", element: <Login /> },
+    { path: "/register", element: <Register /> },
+    { path: "/feed", element: <Feed /> },
+    { path: "/messages", element: <Messages /> },
+    { path: "/notifications", element: <Notifications /> },
+    { path: "/account", element: <Account /> },
+    { path: "/posts/create", element: <CreatePost /> },
+    { path: "/users", element: <User /> }
+  ]);
+  return routes;
+};
+
+const AppWrapper = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <App />
+    </Router>
   );
-}
+};
 
-export default App;
+export default AppWrapper;

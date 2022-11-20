@@ -1,0 +1,43 @@
+.user_simple{
+    margin: 10px 0;
+    padding: 5px 40px;
+    display: flex;
+    width:100%;
+    align-items: center;
+    user-select: none;
+    justify-content: center;
+    background: white;
+    color:black;
+    border:1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition:.2s;
+}
+.user_simple:hover{
+    background: black;
+    color:white;
+}
+.user_simple .logo img{
+    width:40px;
+    margin: 10px 10px 10px 0;
+    height:40px;
+    border-radius: 50%;
+}
+.not_sent_user .sentMessage{
+    display: none;
+}
+.user_details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sent_user .sentMessage{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    padding: 22px 60px;
+}
+.sent_user .user_details{
+    display: none;
+}

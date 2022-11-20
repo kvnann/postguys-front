@@ -1,0 +1,17 @@
+.create_post .form{
+    margin:30px auto;
+}
+.create_post .inputs{
+    margin: 30px 0;
+}
+.create_post textarea{
+   resize: none;
+    width:400px;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 20px;
+    height: auto;
+}
+textarea:focus, input:focus{
+    outline: none;
+}
