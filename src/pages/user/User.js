@@ -47,7 +47,7 @@ const User = () => {
       catch(e){}
         const auth = async() => {
             var token = localStorage.getItem('x-access-token');
-            await axios.post('http://localhost:3001/api/auth',{
+            await axios.post('https://postguys.herokuapp.com/api/auth',{
               'token':token
             }).then(res=>{
               setpage(
@@ -71,7 +71,7 @@ const User = () => {
         }
         return async () => {
           if(userdata === false){
-            await axios.post('http://localhost:3001/api/getuserid',{
+            await axios.post('https://postguys.herokuapp.com/api/getuserid',{
               token:localStorage.getItem('x-access-token'),
               userId:userId
             }).then(res=>{  
@@ -81,7 +81,7 @@ const User = () => {
               });
             }
             if(!user.username){
-              await axios.post("http://localhost:3001/api/getuser",{
+              await axios.post("https://postguys.herokuapp.com/api/getuser",{
                 token:localStorage.getItem('x-access-token')
               }).then((res)=>{
                 setuser(res.data.user);
