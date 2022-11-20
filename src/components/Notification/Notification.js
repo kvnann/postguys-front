@@ -33,7 +33,7 @@ const Notification = (props) => {
                 <div className="text">
                       Sent you a post by <a href={`https://postguys-demo.herokuapp.com/users?userId=${props.notificationData.owner._id}`} className='userLink'>{props.notificationData.owner.username}</a>, click to see it!
                 </div>
-          </div>  
+          </div>
         )
         break;
       case "follow":

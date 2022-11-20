@@ -42,7 +42,7 @@ const Account = ()=>{
                       </div>
                   </div>
                   <div className='posts'>
-                    <Posts viewer={user} owner={user} method={2} />
+                    <Posts viewer={user} owner={user} method={2}/>
                   </div>
               </div>
             );

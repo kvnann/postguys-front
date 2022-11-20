@@ -37,7 +37,7 @@ const Posts = (props) => {
         }).then(res=>{
           setpage(
             <div className='posts'>
-              {res.data.map(post => (
+              {res.data.slice(0).reverse().map(post => (
                 <Post id={post._id} key={post._id} postId={`post_${post._id}`} viewer={viewer._id} owner={post.user._id} liked={post.likes.indexOf(viewer._id)>-1 ? "liked" : ""} ppLink={post.user.ppimage} username={post.user.username} date={post.publishDateString} postText={post.text} />
               ))}
             </div>
