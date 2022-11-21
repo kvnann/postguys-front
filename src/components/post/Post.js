@@ -91,7 +91,9 @@ const Post = (props) => {
                 <div className='search_results'>
                   <div className='loading'></div>
                   <div className={`found_user ${foundUser?'d-flex':'d-none'}`}>
-                    <UserSimple postId={props.id} viewer={props.viewer} user={foundUser} />
+                  {foundUser.map(foundUserSingle => (
+                    <UserSimple postId={props.id} viewer={props.viewer} user={foundUserSingle} />
+                  ))}
                   </div>
                 </div>
             </div>
