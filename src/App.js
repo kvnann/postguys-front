@@ -7,6 +7,8 @@ import Login from './pages/login/login';
 import Register from './pages/register/register';
 import CreatePost from './pages/createPost/createPost';
 import User from './pages/user/User';
+import EditProfile from './pages/edit_profile/editProfile';
+import Explore from './pages/explore/explore';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
 import {
@@ -24,7 +26,9 @@ const App = () => {
     { path: "/notifications", element: <Notifications /> },
     { path: "/account", element: <Account /> },
     { path: "/posts/create", element: <CreatePost /> },
-    { path: "/users", element: <User /> }
+    { path: "/users", element: <User /> },
+    { path: "/user_edit", element: <EditProfile /> },
+    { path: "/explore", element: <Explore /> }
   ]);
   return routes;
 };

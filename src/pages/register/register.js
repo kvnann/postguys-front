@@ -90,7 +90,7 @@ const Register = () => {
     }
     useEffect(()=>{
         localStorage.setItem("x-access-token","");   
-    });
+    },[]);
 
     useEffect(() => {
         document.getElementById('ppimage').addEventListener('change',(e)=>setimage(e.target.files[0]));
@@ -100,28 +100,26 @@ const Register = () => {
     <div className="login">
 
         <h1 className="display-2 register-text">Register</h1>
-            <br/>
-            <div className='messages d-none'>
-                <div className="loading"></div>
-                <div className="success"></div>
-                <div className="errorShow"></div>
+        <br/>
+        <div className='messages d-none'>
+            <div className="loading"></div>
+            <div className="success"></div>
+            <div className="errorShow"></div>
+        </div>
+        <div className='imageUpload d-none'>
+            <h1>Hey <span className='text-danger text-size-25'>{username}</span>, let's make a profile photo!</h1>
+            <div className='imageContainer' ><img alt="ppPreview" src="https://postguys.herokuapp.com/uploads/default.png" id="uploadedImage"/></div>
+            <div className="input_div"><input type="file" id='ppimage' onChange={()=>{imageUpload()}} accept="image/*" name="image" className="myInput" required /></div>
+            <div className='register-upload-buttons'>
+                <div className="input_div"><button type="submit" onClick={()=>backStep()} className="btn">Back</button></div>
+                <div className="input_div"><input type="submit" onClick={()=>signMeUp()} value="Submit" name="submit" className="btn"/></div>
             </div>
-            <div className='imageUpload d-none'>
-                <h1>Hey <span className='text-danger text-size-25'>{username}</span>, let's make a profile photo!</h1>
-                <div className='imageContainer' ><img alt="ppPreview" src="https://postguys.herokuapp.com/uploads/default.png" id="uploadedImage"/></div>
-                <div className="input_div"><input type="file" id='ppimage' onChange={()=>{imageUpload()}} accept="image/*" name="image" className="myInput" required /></div>
-                <div className='register-upload-buttons'>
-                    <div className="input_div"><button type="submit" onClick={()=>backStep()} className="btn">Back</button></div>
-                    <div className="input_div"><input type="submit" onClick={()=>signMeUp()} value="Submit" name="submit" className="btn"/></div>
-                </div>
-            </div>
-            <div className='register-others'>
-                <div className="input_div"><input type="text" onChange={(e)=>{setusername(e.target.value)}} placeholder="Username" name="Username" className="myInput" required /></div>
-                <div className="input_div"><input type="password" onChange={(e)=>{setpassword(e.target.value)}} id='registerPass' placeholder="Password" name="Password" className="myInput" required /></div>
-                <div className="input_div"><button type="submit" onClick={()=>nextStep()} className="btn">Next</button></div>
-            </div>
-            <br/>
-            <div>Already have an account? <a className="muted" href="./login">Log in!</a></div>
+        </div>
+        <div className='register-others'>
+            <div className="input_div"><input type="text" onChange={(e)=>{setusername(e.target.value)}} placeholder="Username" name="Username" className="myInput" required /></div>
+            <div className="input_div"><input type="password" onChange={(e)=>{setpassword(e.target.value)}} id='registerPass' placeholder="Password" name="Password" className="myInput" required /></div>
+            <div className="input_div"><button type="submit" onClick={()=>nextStep()} className="btn">Next</button></div>
+        </div>
     </div>
   )
 }

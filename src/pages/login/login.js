@@ -37,7 +37,7 @@ const Login = () => {
 
     return (
     <div className="login">
-        <h1 class='display-2'>Log In</h1>
+        <h1 className='display-2'>Log In</h1>
         <br/>
         <div className='messages d-none'>
             <div className="success"></div>

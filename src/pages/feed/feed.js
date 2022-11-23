@@ -27,7 +27,8 @@ const Feed = () => {
             <div className='feed_main'>
               <Navbar active="feed"/>
               <div className='links'>
-                <div class='btn' onClick={()=>{window.location="/posts/create"}}>Create a post!</div>
+                <div className='btn' onClick={()=>{window.location="/explore"}}>Explore</div>
+                <div className='btn' onClick={()=>{window.location="/posts/create"}}>Create a post!</div>
               </div>
               {/* 1- Feed 2- User posts */}
               <Posts viewer={user} owner={user} method={1}/>

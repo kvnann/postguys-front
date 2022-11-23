@@ -1,0 +1,11 @@
+.main_explore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+#explore_input{
+    border:1px solid black;
+    padding:10px 50px;
+}

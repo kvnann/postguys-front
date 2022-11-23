@@ -1,7 +1,7 @@
 import React from 'react';
 import {Navbar, AccountCard, Posts} from '../../components'
 import './accounts.css';
-
+import enviroment from "../../config"
 import { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react'
@@ -11,7 +11,7 @@ const Account = ()=>{
     const [page, setpage] = useState(
       <div>
         <h1>Please Wait...</h1>
-        <Navbar active="feed"/>
+        <Navbar active="accounts"/>
       </div>
     );
     useEffect(() => { 
@@ -37,7 +37,7 @@ const Account = ()=>{
               <div className='account_main'>
                   <AccountCard ppLink={user.ppimage} followers={user.followers.length} username={user.username} joinDate={user.joinDate} likeCount={user.likeCount} shareCount={user.shareCount} postCount={user.postCount}/>
                   <div>
-                  <button className="btn black-edition">Edit Profile</button>
+                  <button className="btn black-edition" onClick={()=>{window.location=`${enviroment.baseUrl}/user_edit`}}>Edit Profile</button>
                       <button className="btn black-edition" onClick={()=>logout()}>Log Out</button>
                       </div>
                   </div>

@@ -22,6 +22,7 @@ const CreatePost = () => {
             <div className='inputs'>
                 <textarea className='input' id="postText" onChange={(e)=>{settext(e.target.value)}} maxLength={200} rows={7} placeholder='What do you think?'/>
             </div>
+            <button onClick={()=>{window.location="/feed"}}  className="btn">Back</button>
             <button className='btn' onClick={()=>newPost()}>Submit</button>
         </div>
     </div>

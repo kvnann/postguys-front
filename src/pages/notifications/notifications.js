@@ -22,7 +22,7 @@ const Notifications = () => {
             <div>
             <Navbar active="notifications"/>
             <div className='notifications'>
-              {user.notifications.slice(0).reverse().map(notification => (
+              {user.notifications.map(notification => (
                 <Notification key={notification._id} notificationData={notification} />
               ))}
               </div>
