@@ -19,8 +19,8 @@ const Explore = () => {
             setviewer(res.data.user)
         }).catch(err=>{
             // window.location="/login"
-        })
-    }, [])
+        });
+    }, []);
 
     const searchUser = () =>{
         const keyword = document.querySelector(`.send_model #explore_input`).value;
