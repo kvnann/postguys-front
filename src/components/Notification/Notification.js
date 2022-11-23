@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 const Notification = (props) => {
   const [page, setpage] = useState();
   const goProfile = (profileId)=>{
-    window.location=`https://postguys-demo.herokuapp.com/users?userId=${profileId}`
+    window.location=`/users?userId=${profileId}`
   }
   useEffect(() => {
     switch (props.notificationData.type) {
