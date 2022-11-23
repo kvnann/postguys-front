@@ -10,4 +10,4 @@ enviroment.production = {
     'baseUrlBack':"https://postguys.herokuapp.com"
 }
 
-export default enviroment.staging
+export default enviroment.production
