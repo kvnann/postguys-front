@@ -18,7 +18,7 @@ const Notification = (props) => {
                   <div className="username">{props.notificationData.likedBy.username}</div>
               </div>
               <div className="text">
-                  Liked your <a style={{color:"brown"}} href={`https://postguys-demo.herokuapp.com/posts?postId=${props.notificationData.postId}`}>post!</a>
+                  Liked your <a style={{color:"brown"}} href={`/posts?postId=${props.notificationData.postId}`}>post!</a>
               </div>
           </div>  
         )
@@ -31,7 +31,7 @@ const Notification = (props) => {
                   <div className="username">{props.notificationData.from.username}</div>
                 </div>
                 <div className="text">
-                      Sent you a post by <a href={`https://postguys-demo.herokuapp.com/users?userId=${props.notificationData.owner._id}`} className='userLink'>{props.notificationData.owner.username}</a>, click to see it!
+                      Sent you a post by <a href={`/users?userId=${props.notificationData.owner._id}`} className='userLink'>{props.notificationData.owner.username}</a>, click to see it!
                 </div>
           </div>
         )
