@@ -19,7 +19,7 @@ const Notifications = () => {
           'token':token
         }).then(res=>{
           setpage(
-            <div>
+            <div className='mt-4'>
             <Navbar active="notifications"/>
             <div className='notifications'>
               {user.notifications.map(notification => (

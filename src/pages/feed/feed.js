@@ -8,7 +8,7 @@ import { useState } from 'react'
 
 const Feed = () => {
   const [page, setpage] = useState(
-    <div>
+    <div className='mt-4'>
       <h1>Please Wait...</h1>
       <Navbar active="feed"/>
     </div>

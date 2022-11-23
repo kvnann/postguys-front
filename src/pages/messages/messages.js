@@ -7,7 +7,12 @@ import axios from 'axios'
 import { useState } from 'react'
 
 const Messages = () => {
-  const [page, setpage] = useState(<h1>Please Wait...</h1>);
+  const [page, setpage] = useState(
+    <div className='mt-4'>
+      <h1>Please Wait...</h1>
+      <Navbar active="messages"/>
+    </div>
+  );
   const [user, setuser] = useState({})
 
   useEffect(() => { 

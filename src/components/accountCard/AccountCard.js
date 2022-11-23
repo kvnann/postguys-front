@@ -10,7 +10,6 @@ const AccountCard = (props) => {
         </div>
         <div className='stats'>
             <div className=''>{props.likeCount} Likes</div>
-            <div className=''>{props.shareCount} Shares</div>
             <div className=''>{props.postCount} Posts</div>
             <div className=''>{props.followers} Followers</div>
         </div>

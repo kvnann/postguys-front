@@ -46,3 +46,9 @@
 .mnavbar_item .ppimage{
     border-radius:100%;
 }
+
+@media only screen and (max-width:500px) {
+    .mnavbar{
+        padding-bottom: 15px;
+    }
+}
