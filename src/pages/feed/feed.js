@@ -1,7 +1,7 @@
 import React from 'react'
 import './feed.css'
 import {Navbar,Posts} from '../../components'
-
+import enviroment from "../../config"
 import { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react'
