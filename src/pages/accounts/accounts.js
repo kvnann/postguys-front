@@ -47,8 +47,8 @@ const Account = ()=>{
               </div>
             );
           }).catch(error=>{
-            window.location = '/login'
-            localStorage.setItem('x-access-token','');
+            // window.location = '/login'
+            // localStorage.setItem('x-access-token','');
           });
       }
       return async () => {
@@ -59,7 +59,7 @@ const Account = ()=>{
             setuser(res.data.user);
             
           }).catch(err=>{
-              window.location = '/login'
+              // window.location = '/login'
           });
         }
         else{

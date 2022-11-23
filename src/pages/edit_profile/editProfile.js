@@ -31,7 +31,6 @@ const EditProfile = () => {
     }
 
   useEffect(() => {
-    console.log(enviroment)
     
     if(user){
         setusername(user.username)
