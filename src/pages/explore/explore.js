@@ -18,7 +18,7 @@ const Explore = () => {
         }).then(res=>{
             setviewer(res.data.user)
         }).catch(err=>{
-            window.location="/login"
+            // window.location="/login"
         })
     }, [])
 
