@@ -37,7 +37,7 @@ const Account = ()=>{
               <div className='account_main'>
                   <AccountCard ppLink={user.ppimage} followers={user.followers.length} username={user.username} joinDate={user.joinDate} likeCount={user.likeCount} shareCount={user.shareCount} postCount={user.postCount}/>
                   <div>
-                  <button className="btn black-edition" onClick={()=>{window.location=`${enviroment.baseUrl}/user_edit`}}>Edit Profile</button>
+                  <button className="btn black-edition" onClick={()=>{window.location=`/user_edit`}}>Edit Profile</button>
                       <button className="btn black-edition" onClick={()=>logout()}>Log Out</button>
                       </div>
                   </div>
