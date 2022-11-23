@@ -9,7 +9,7 @@ const Post = (props) => {
   const [foundUser, setfoundUser] = useState([]);
   const [liked, setLiked] = useState(props.liked);
   const goProfile = (profileId)=>{
-    window.location=`https://postguys-demo.herokuapp.com/users?userId=${profileId}`
+    window.location=`/users?userId=${profileId}`
   }
   const likeEvent = ()=>{
     

@@ -9,7 +9,7 @@ const Explore = () => {
     const [viewer, setviewer] = useState(false);
     const [foundUser, setfoundUser] = useState([]);
     const goProfile = (profileId)=>{
-      window.location=`https://postguys-demo.herokuapp.com/users?userId=${profileId}`
+      window.location=`/users?userId=${profileId}`
     }
 
     useEffect(() => {
