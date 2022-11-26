@@ -20,7 +20,7 @@ const Feed = () => {
   useEffect(() => { 
     const auth = async () => {
       var token = localStorage.getItem('x-access-token');
-        await axios.post('https://postguys.herokuapp.com/api/auth',{
+        await axios.post(`${enviroment.baseUrlBack}/api/auth`,{
           'token':token
         }).then(res=>{
           setpage(
@@ -42,7 +42,7 @@ const Feed = () => {
     return async () => {
       
       if(!user.username){
-        await axios.post("https://postguys.herokuapp.com/api/getuser",{
+        await axios.post(`${enviroment.baseUrlBack}/api/getuser`,{
           token:localStorage.getItem('x-access-token')
         }).then(async(res)=>{
           setuser(res.data.user);

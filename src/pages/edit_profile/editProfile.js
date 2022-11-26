@@ -14,14 +14,14 @@ const EditProfile = () => {
     const imageformData = new FormData();
     imageformData.append("image", image);
     imageformData.append("username", username);
-    await axios.post("https://postguys.herokuapp.com/api/upload_files",imageformData,{
+    await axios.post(`${enviroment.baseUrlBack}api/upload_files`,imageformData,{
             headers:{'Content-Type': 'multipart/form-data'}
         }).then(res=>{
             document.querySelector('.messages').classList.remove('d-none');
             document.querySelector('.success').innerHTML = "Image uploaded!";
             document.querySelector('.loading').innerHTML = "";
             document.querySelector('.errorShow').innerHTML = "";
-            setimagename(`https://postguys.herokuapp.com/uploads/${res.data.imagename}`);
+            setimagename(`${enviroment.baseUrlBack}/uploads/${res.data.imagename}`);
         }).catch(err=>{
             document.querySelector('.messages').classList.remove('d-none');
             document.querySelector('.success').innerHTML = "";

@@ -3,7 +3,7 @@ import {Post} from '../'
 import './posts.css'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-
+import enviroment from '../../config'
 const Posts = (props) => {
   const [page, setpage] = useState(<h1>Please Wait...</h1>);
   const viewer = props.viewer
@@ -31,7 +31,7 @@ const Posts = (props) => {
 
 
       if(postsIndex.length>0){
-        await axios.post('https://postguys.herokuapp.com/api/post/get_posts',{
+        await axios.post(`${enviroment.baseUrlBack}api/post/get_posts`,{
           token:localStorage.getItem('x-access-token'),
           keys:postsIndex
         }).then(res=>{

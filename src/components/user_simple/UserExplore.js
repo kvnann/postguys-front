@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import './UserSimple.css'
-
+import enviroment from '../../config'
 const UserExplore = (props) => {
   return (
     <div className="not_sent_user user_simple user_explore" onClick={() => {window.location=`/users?userId=${props.user._id}`}} id={`simple${props.user._id}`}>

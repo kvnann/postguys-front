@@ -4,7 +4,7 @@ import { useState } from 'react';
 import {FaHeart} from 'react-icons/fa';
 import {UserSimple} from '../'
 import axios from 'axios';
-
+import enviroment from '../../config'
 const Post = (props) => {
   const [foundUser, setfoundUser] = useState([]);
   const [liked, setLiked] = useState(props.liked);
@@ -14,7 +14,7 @@ const Post = (props) => {
   const likeEvent = ()=>{
     
     if(!liked){
-      axios.post("https://postguys.herokuapp.com/api/post/like",{
+      axios.post(`${enviroment.baseUrlBack}api/post/like`,{
         token:localStorage.getItem("x-access-token"),
         likedBy:props.viewer,
         owner:props.owner,
@@ -26,7 +26,7 @@ const Post = (props) => {
       });
     }
     else{
-      axios.post("https://postguys.herokuapp.com/api/post/unlike",{
+      axios.post(`${enviroment.baseUrlBack}/api/post/unlike`,{
         token:localStorage.getItem("x-access-token"),
         unlikedBy:props.viewer,
         owner:props.owner,
@@ -57,7 +57,7 @@ const Post = (props) => {
     if(keyword && keyword.length>0){
       setfoundUser([]);
       document.querySelector(`#${props.postId} .other .send_model .search_results .loading`).innerHTML = "Loading...";
-      axios.post("https://postguys.herokuapp.com/api/search_users",{
+      axios.post(`${enviroment.baseUrlBack}/api/search_users`,{
         keyword: keyword,
         token:localStorage.getItem("x-access-token")
       }).then(res=>{

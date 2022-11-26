@@ -16,7 +16,7 @@ const Account = ()=>{
     );
     useEffect(() => { 
       const logout = ()=>{
-        axios.post('https://postguys.herokuapp.com/api/logout',{
+        axios.post(`${enviroment.baseUrlBack}/api/logout`,{
           user:user,
           token:localStorage.getItem('x-access-token')
         }).then(res=>{
@@ -28,7 +28,7 @@ const Account = ()=>{
       }
       const auth = () => {
           var token = localStorage.getItem('x-access-token');
-          axios.post('https://postguys.herokuapp.com/api/auth',{
+          axios.post(`${enviroment.baseUrlBack}/api/auth`,{
             'token':token
           }).then(res=>{
             setpage(
@@ -53,7 +53,7 @@ const Account = ()=>{
       }
       return async () => {
         if(!user.username){
-          await axios.post("https://postguys.herokuapp.com/api/getuser",{
+          await axios.post(`${enviroment.baseUrlBack}/api/getuser`,{
             token:localStorage.getItem('x-access-token')
           }).then(async(res)=>{
             setuser(res.data.user);

@@ -2,7 +2,7 @@ import React from 'react'
 import './Notification.css'
 import { useEffect, useState } from 'react';
 // import axios from 'axios';
-
+import enviroment from '../../config'
 const Notification = (props) => {
   const [page, setpage] = useState();
   const goProfile = (profileId)=>{

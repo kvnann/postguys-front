@@ -3,6 +3,7 @@ import React from 'react'
 import {useLocation} from "react-router-dom";
 import { useEffect, useState } from 'react';
 import {Navbar, AccountCard, Posts} from '../../components'
+import enviroment from '../../config'
 
 const User = () => {
     const search = useLocation().search;
@@ -27,7 +28,7 @@ const User = () => {
     
       document.querySelector("#follow-btn").innerHTML = "Please wait..";
 
-      await axios.post("https://postguys.herokuapp.com/api/follow",{
+      await axios.post(`${enviroment.baseUrlBack}/api/follow`,{
         token:localStorage.getItem('x-access-token'),
         user1:user._id,
         user2:userdata._id,
@@ -47,7 +48,7 @@ const User = () => {
       catch(e){}
         const auth = async() => {
             var token = localStorage.getItem('x-access-token');
-            await axios.post('https://postguys.herokuapp.com/api/auth',{
+            await axios.post(`${enviroment.baseUrlBack}/api/auth`,{
               'token':token
             }).then(res=>{
               setpage(
@@ -71,7 +72,7 @@ const User = () => {
         }
         return async () => {
           if(userdata === false){
-            await axios.post('https://postguys.herokuapp.com/api/getuserid',{
+            await axios.post(`${enviroment.baseUrlBack}/api/getuserid`,{
               token:localStorage.getItem('x-access-token'),
               userId:userId
             }).then(res=>{  
@@ -81,7 +82,7 @@ const User = () => {
               });
             }
             if(!user.username){
-              await axios.post("https://postguys.herokuapp.com/api/getuser",{
+              await axios.post(`${enviroment.baseUrlBack}/api/getuser`,{
                 token:localStorage.getItem('x-access-token')
               }).then((res)=>{
                 setuser(res.data.user);

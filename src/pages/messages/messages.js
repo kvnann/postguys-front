@@ -1,7 +1,7 @@
 import React from 'react'
 import {Navbar} from '../../components'
 import './messages.css'
-
+import enviroment from '../../config'
 import { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react'
@@ -19,7 +19,7 @@ const Messages = () => {
     const auth = async () => {
       var token = localStorage.getItem('x-access-token');
   
-      await axios.post('https://postguys.herokuapp.com/api/auth',{
+      await axios.post(`${enviroment.baseUrlBack}/api/auth`,{
         'token':token
         }).then(res=>{
           setpage(
@@ -38,7 +38,7 @@ const Messages = () => {
     return async () => {
       await auth();
       if(!user.username){
-        await axios.post("https://postguys.herokuapp.com/api/getuser",{
+        await axios.post(`${enviroment.baseUrlBack}/api/getuser`,{
           token:localStorage.getItem('x-access-token')
         }).then((res)=>{
             setuser(res.data.user);

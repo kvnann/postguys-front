@@ -3,7 +3,7 @@ import './Navbar.css'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
+import enviroment from '../../config'
 const Navbar = (props) => {
   const linkTo = (dir) => {
     window.location = './' + dir
@@ -30,7 +30,7 @@ const Navbar = (props) => {
         default:
             break;
       }
-    axios.post("https://postguys.herokuapp.com/api/getuser",{
+    axios.post(`${enviroment.baseUrlBack}api/getuser`,{
         token:localStorage.getItem('x-access-token')
     }).then(res=>{
         setuser(res.data.user);

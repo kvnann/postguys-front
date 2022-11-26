@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import './UserSimple.css'
-
+import enviroment from '../../config'
 const UserSimple = (props) => {
     const sendPost = async () => {
         document.querySelector("#simple"+props.user._id + props.postId).classList.add('sent_user')
@@ -9,7 +9,7 @@ const UserSimple = (props) => {
             document.querySelector("#simple"+props.user._id + props.postId).classList.remove('sent_user')
             document.querySelector("#simple"+props.user._id + props.postId).classList.add('not_sent_user')
         },5000);
-        axios.post("https://postguys.herokuapp.com/api/post/send",{
+        axios.post(`${enviroment.baseUrlBack}/api/post/send`,{
             token:localStorage.getItem("x-access-token"),
             from:props.viewer,
             to:props.user._id,

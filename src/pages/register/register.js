@@ -2,7 +2,7 @@ import React from 'react'
 import './register.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-
+import enviroment from '../../config'
 const Register = () => {
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
@@ -12,14 +12,14 @@ const Register = () => {
         const imageformData = new FormData();
         imageformData.append("image", image);
         imageformData.append("username", username);
-        await axios.post("https://postguys.herokuapp.com/api/upload_files",imageformData,{
+        await axios.post(`${enviroment.baseUrlBack}/api/upload_files`,imageformData,{
                 headers:{'Content-Type': 'multipart/form-data'}
         }).then(res=>{
             document.querySelector('.messages').classList.remove('d-none');
             document.querySelector('.success').innerHTML = "Image uploaded!";
             document.querySelector('.loading').innerHTML = "";
             document.querySelector('.errorShow').innerHTML = "";
-            document.getElementById('uploadedImage').src = "https://postguys.herokuapp.com/uploads/" + res.data.imagename;
+            document.getElementById('uploadedImage').src = `${enviroment.baseUrlBack}/uploads/${res.data.imagename}`;
             setimagename(res.data.imagename);
         }).catch(err=>{
             document.querySelector('.messages').classList.remove('d-none');
@@ -35,14 +35,14 @@ const Register = () => {
             document.querySelector('.messages').classList.remove('d-none');
 
 
-            await axios.post("https://postguys.herokuapp.com/api/register",{
+            await axios.post(`${enviroment.baseUrlBack}/api/register`,{
                 username:username,
                 password:password,
                 imagename:imagename
             }).then(async(res) => {
             document.querySelector('.loading').innerHTML = "";
             document.querySelector('.success').innerHTML = "Register Successfull, please wait, you will be redirected";
-            await axios.post("https://postguys.herokuapp.com/api/login",{
+            await axios.post(`${enviroment.baseUrlBack}/api/login`,{
                 username:username,
                 password:password
             }).then(res => {
@@ -84,7 +84,7 @@ const Register = () => {
         document.querySelector('.imageUpload').classList.add('d-none');
         document.querySelector('.register-others').classList.remove('d-none');
         document.querySelector('#ppimage').value="";
-        document.getElementById('uploadedImage').src = "https://postguys.herokuapp.com/uploads/default.png";
+        document.getElementById('uploadedImage').src = `${enviroment.baseUrlBack}/uploads/default.png`;
         setimage(false)
 
     }

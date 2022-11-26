@@ -2,11 +2,11 @@ import React from 'react'
 import "./createPost.css"
 import { useState } from 'react'
 import axios from 'axios'
-
+import enviroment from '../../config'
 const CreatePost = () => {
   const [text, settext] = useState();
   const newPost = ()=>{
-    axios.post('https://postguys.herokuapp.com/api/post/create',{
+    axios.post(`${enviroment.baseUrlBack}/api/post/create`,{
         token:localStorage.getItem('x-access-token'),
         postText:text
     }).then(res=>{
