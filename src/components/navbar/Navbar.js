@@ -30,7 +30,7 @@ const Navbar = (props) => {
         default:
             break;
       }
-    axios.post(`${enviroment.baseUrlBack}api/getuser`,{
+    axios.post(`${enviroment.baseUrlBack}/api/getuser`,{
         token:localStorage.getItem('x-access-token')
     }).then(res=>{
         setuser(res.data.user);

@@ -20,7 +20,7 @@ const Login = () => {
                 document.querySelector('.success').innerHTML = "Successful login!";
                 if(res.data.user && res.data.user.token.length>0){
                     localStorage.setItem('x-access-token',res.data.user.token);
-                    window.location = '/'
+                    window.location = '/feed'
                 }
             }).catch((error) => {
                 document.querySelector('.errorShow').innerHTML = (error.response.data.error);

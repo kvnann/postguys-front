@@ -31,7 +31,7 @@ const Posts = (props) => {
 
 
       if(postsIndex.length>0){
-        await axios.post(`${enviroment.baseUrlBack}api/post/get_posts`,{
+        await axios.post(`${enviroment.baseUrlBack}/api/post/get_posts`,{
           token:localStorage.getItem('x-access-token'),
           keys:postsIndex
         }).then(res=>{

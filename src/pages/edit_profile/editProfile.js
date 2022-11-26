@@ -14,7 +14,7 @@ const EditProfile = () => {
     const imageformData = new FormData();
     imageformData.append("image", image);
     imageformData.append("username", username);
-    await axios.post(`${enviroment.baseUrlBack}api/upload_files`,imageformData,{
+    await axios.post(`${enviroment.baseUrlBack}/api/upload_files`,imageformData,{
             headers:{'Content-Type': 'multipart/form-data'}
         }).then(res=>{
             document.querySelector('.messages').classList.remove('d-none');

@@ -28,7 +28,7 @@ const Explore = () => {
         if(keyword && keyword.length>0){
           setfoundUser([]);
           document.querySelector(`.send_model .search_results .loading`).innerHTML = "Loading...";
-          axios.post(`${enviroment.baseUrlBack}api/search_users`,{
+          axios.post(`${enviroment.baseUrlBack}/api/search_users`,{
             keyword: keyword,
             token:localStorage.getItem("x-access-token")
           }).then(res=>{
