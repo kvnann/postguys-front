@@ -6,7 +6,7 @@ enviroment.staging = {
 }
 
 enviroment.production = {
-    'baseUrl':"http://main.d2vq9ezjhsp9ls.amplifyapp.com",
+    'baseUrl':"https://main.d2vq9ezjhsp9ls.amplifyapp.com",
     'baseUrlBack':"https://postguys-env.eba-xpyhpaw7.us-east-1.elasticbeanstalk.com"
 }
 
